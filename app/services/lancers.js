@@ -1,6 +1,6 @@
 var lancers = [];
 for (i = 0; i < 15; i++) {
-    lancers.push({name: "Lancer "+i,phone:(Math.random()*1000000000|0).toString()});
+    lancers.push({name: "LanCer "+i,phone:(Math.random()*1000000000|0).toString()});
 }
 
 angular.module('9jam')
