@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="components/bootstrap/docs/assets/css/bootstrap-responsive.css">
+    <script src="components/angular/angular.js"></script>
+    <script src="components/bootstrap-gh-pages/ui-bootstrap-tpls-0.3.0.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers/main.js"></script>
+    <script src="app/services/user.js"></script>
+    <script src="app/services/users.js"></script>
+    <title>9jam.my</title>
 </head>
-<body>
-
+<body ng-app="9jam">
+<ng-include src="'app/views/main.html'" ng-controller="MainCtrl"></ng-include>
 </body>
 </html>
