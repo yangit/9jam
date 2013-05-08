@@ -1,5 +1,5 @@
 angular.module('9jam')
-    .controller('MainCtrl', function ($scope, $rootScope, User, Users) {
+    .controller('MainCtrl', function ($scope, $rootScope, User, Lancers) {
         $rootScope.user = User.get();
-        $rootScope.users = Users.get();
+        $rootScope.lancers = Lancers.get();
     });
