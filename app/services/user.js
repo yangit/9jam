@@ -9,9 +9,9 @@ user = {
         shy: true
     },
     education: {stm: true, bachelor: true},
-    area: "Kuala-Lumpur",
+    location: "Kuala-Lumpur",
     rate: 90,
-    interfaceLang: "en",
+    interfaceLang: true,
     auth: {
         in:false,
         fb:{},

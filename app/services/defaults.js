@@ -1,5 +1,6 @@
 defaults = {
-    domain: "9jam.my"
+    domain: "9jam.my",
+    locations: ['Kuala-Lumpur','Pinang']
 };
 
 angular.module('9jam')
