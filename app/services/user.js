@@ -1,7 +1,7 @@
 user = {
     age: 29,
     lang: {en: 3, my: 1, tm: 0, mn: 0},
-    phone:"+60166521254",
+    phone:"0166521254",
     name: {
         first: "Yan",
         middle: "L",

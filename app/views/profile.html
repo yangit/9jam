@@ -1,12 +1,56 @@
 <div class="container">
-    <h2>Profile: {{user.name.first}}</h2>
-    <p>Please fill in your profile. It will be published as soon as you complete it.</p>
-    <label>Name:</label>
-    <input type="text" ng-model="user.name.first" placeholder="First name">
-    <input type="text" ng-model="user.name.middle" placeholder="Middle name">
-    <input type="text" ng-model="user.name.last" placeholder="Last name"><br>
-    <label class="checkbox">Hide my last name:<input type="checkbox" ng-model="user.name.shy"></label>
+    <h2>Profile: {{user | username}}</h2>
 
-    Your rate RM/hour <input type="number" ng-model="user.rate" value="0" step="0.1" width="1px"><br>
+    <p>Please fill in your profile. It will be published as soon as you complete it.</p>
+    <label>Name:
+        <input type="text" ng-model="user.name.first" placeholder="First name">
+        <input type="text" ng-model="user.name.middle" placeholder="Middle name">
+        <input type="text" ng-model="user.name.last" placeholder="Last name"></label>
+    <label class="checkbox">Hide last name:<input type="checkbox" ng-model="user.name.shy"></label>
+    <label>Mobile phone:
+    <span class="input-prepend">
+        <span class="add-on">+6</span>
+        <input class="span2" type="text" ng-model="user.phone" placeholder="+6 016 999 99 99">
+    </span>
+    </label>
+    <label>Age:
+        <input class="input-mini" type="number" ng-model="user.age" step="1"></label>
+    <label>Your rate RM/hour: <input class="input-mini" type="number" ng-model="user.rate" value="0" step="0.1"
+                                     width="1px"></label>
+
+    <label>Language proficency:
+        <label>Malay:
+            <div class="btn-group">
+                <button type="button" class="btn btn-mini" ng-model="user.lang.my" btn-radio="0">None</button>
+                <button type="button" class="btn btn-mini" ng-model="user.lang.my" btn-radio="1">Beginner</button>
+                <button type="button" class="btn btn-mini" ng-model="user.lang.my" btn-radio="2">Intermediate</button>
+                <button type="button" class="btn btn-mini" ng-model="user.lang.my" btn-radio="3">Advanced</button>
+            </div>
+        </label>
+        <label>English:
+            <div class="btn-group">
+                <button type="button" class="btn btn-mini" ng-model="user.lang.en" btn-radio="0">None</button>
+                <button type="button" class="btn btn-mini" ng-model="user.lang.en" btn-radio="1">Beginner</button>
+                <button type="button" class="btn btn-mini" ng-model="user.lang.en" btn-radio="2">Intermediate</button>
+                <button type="button" class="btn btn-mini" ng-model="user.lang.en" btn-radio="3">Advanced</button>
+            </div>
+        </label>
+        <label>Mandarin:
+            <div class="btn-group">
+                <button type="button" class="btn btn-mini" ng-model="user.lang.mn" btn-radio="0">None</button>
+                <button type="button" class="btn btn-mini" ng-model="user.lang.mn" btn-radio="1">Beginner</button>
+                <button type="button" class="btn btn-mini" ng-model="user.lang.mn" btn-radio="2">Intermediate</button>
+                <button type="button" class="btn btn-mini" ng-model="user.lang.mn" btn-radio="3">Advanced</button>
+            </div>
+        </label>
+        <label>Tamil:
+            <div class="btn-group">
+                <button type="button" class="btn btn-mini" ng-model="user.lang.tm" btn-radio="0">None</button>
+                <button type="button" class="btn btn-mini" ng-model="user.lang.tm" btn-radio="1">Beginner</button>
+                <button type="button" class="btn btn-mini" ng-model="user.lang.tm" btn-radio="2">Intermediate</button>
+                <button type="button" class="btn btn-mini" ng-model="user.lang.tm" btn-radio="3">Advanced</button>
+            </div>
+        </label>
+    </label>
 
 </div>
