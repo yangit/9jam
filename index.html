@@ -10,11 +10,16 @@
     <script src="app/app.js"></script>
     <script src="app/services/user.js"></script>
     <script src="app/services/lancers.js"></script>
+    <script src="app/services/defaults.js"></script>
     <script src="app/controllers/main.js"></script>
     <script src="app/controllers/lancer.js"></script>
     <title>9jam.my</title>
 </head>
-<body ng-app="9jam">
-<ng-include src="'app/views/main.html'" ng-controller="MainCtrl"></ng-include>
+
+<body ng-app="9jam" ng-controller="MainCtrl">
+
+<ng-include src="'app/views/header.html'"></ng-include>
+<div ng-view></div>
+<ng-include src="'app/views/footer.html'"></ng-include>
 </body>
 </html>

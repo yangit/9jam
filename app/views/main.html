@@ -1,12 +1,9 @@
-<div>
+<div class="container">
     <h1>Hello {{user.name.first}}!</h1>
     <hr>
-
     <ul>
         <li ng-repeat="l in lancers">
             <ng-include src="'app/views/lancer.html'" ng-controller="LancerCtrl"></ng-include>
         </li>
     </ul>
-
-
 </div>

@@ -10,8 +10,13 @@ user = {
     },
     education: {stm: true, bachelor: true},
     area: "Kuala-Lumpur",
-    interface: "en",
-    rate: 90
+    rate: 90,
+    interfaceLang: "en",
+    auth: {
+        in:false,
+        fb:{},
+        local:{}
+    }
 };
 
 angular.module('9jam')
