@@ -1,74 +1,84 @@
 <div class="container">
-    <h2>Profile: {{user | username}}</h2>
+    <h2>{{__.profile | i18n:user}}: {{user | username}}</h2>
 
-    <p>Please fill in your profile. It will be published as soon as you complete it.</p>
-    <label>Name:</label>
-        <input type="text" ng-model="user.name.first" placeholder="First name">
-        <input type="text" ng-model="user.name.middle" placeholder="Middle name">
-        <input type="text" ng-model="user.name.last" placeholder="Last name">
-    <label class="checkbox">Hide last name:<input type="checkbox" ng-model="user.name.shy"></label>
-    <label>Mobile phone:
+    <p>{{__.pleseFillProfile | i18n:user}}</p>
+    <label>{{__.name | i18n:user}}:</label>
+        <input type="text" ng-model="user.name.first" placeholder="{{__.firstName | i18n:user}}" tooltip="{{__.realName | i18n:user}}" tooltip-trigger="focus">
+        <input type="text" ng-model="user.name.middle" placeholder="{{__.middleName | i18n:user}}" tooltip="{{__.canLeaveBlank | i18n:user}}" tooltip-trigger="focus">
+        <input type="text" ng-model="user.name.last" placeholder="{{__.lastName | i18n:user}}" >
+    <label class="checkbox">{{__.hideLastName | i18n:user}}:<input type="checkbox" ng-model="user.name.shy"></label>
+    <label>{{__.mobilePhone | i18n:user}}:
     <span class="input-prepend">
         <span class="add-on">+6</span>
-        <input class="span2" type="text" ng-model="user.phone" placeholder="+6 016 999 99 99">
+        <input class="span2" type="text" ng-model="user.phone" placeholder="016 999 99 99">
     </span>
     </label>
-    <label>Age:
+    <label>{{__.age | i18n:user}}:
         <input class="input-mini" type="number" ng-model="user.age" step="1"></label>
-    <label>Your rate RM/hour: <input class="input-mini" type="number" ng-model="user.rate" value="0" step="0.1"
-                                     width="1px"></label>
+    <label>{{__.yourRate | i18n:user}}:
+    <div class="input-prepend input-append">
+        <span class="add-on">RM</span>
+        <input class="input-mini" type="number" ng-model="user.rate" value="0" step="0.1">
+        <span class="add-on">/{{__.hour | i18n:user}}</span>
+    </div></label>
 
-    <label>Location: <select ng-model=user.location>
+
+    <label>{{__.location | i18n:user}}:<select ng-model=user.location>
         <option ng-repeat="loc in defaults.locations">{{loc}}</option>
     </select></label>
-    <h5>Language proficency:</h5>
+    <h4>{{__.langProf | i18n:user}}:</h4>
 
-    <div>Malay:
+    <div>{{__.langMy | i18n:user}}:
         <div class="btn-group">
-            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.my==0}" ng-model="user.lang.my" btn-radio="0">None</button>
-            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.my==1}" ng-model="user.lang.my" btn-radio="1">Beginner</button>
-            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.my==2}" ng-model="user.lang.my" btn-radio="2">Intermediate
+            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.my==0}" ng-model="user.lang.my" btn-radio="0">{{__.none | i18n:user}}</button>
+            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.my==1}" ng-model="user.lang.my" btn-radio="1">{{__.beginner | i18n:user}}</button>
+            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.my==2}" ng-model="user.lang.my" btn-radio="2">{{__.intermediate | i18n:user}}
             </button>
-            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.my==3}" ng-model="user.lang.my" btn-radio="3">Advanced</button>
+            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.my==3}" ng-model="user.lang.my" btn-radio="3">{{__.advanced | i18n:user}}</button>
         </div>
     </div>
-    <div>English:
+    <div>{{__.langEn | i18n:user}}:
         <div class="btn-group">
-            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.en==0}" ng-model="user.lang.en" btn-radio="0">None</button>
-            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.en==1}" ng-model="user.lang.en" btn-radio="1">Beginner</button>
-            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.en==2}" ng-model="user.lang.en" btn-radio="2">Intermediate
+            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.en==0}" ng-model="user.lang.en" btn-radio="0">{{__.none | i18n:user}}</button>
+            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.en==1}" ng-model="user.lang.en" btn-radio="1">{{__.beginner | i18n:user}}</button>
+            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.en==2}" ng-model="user.lang.en" btn-radio="2">{{__.intermediate | i18n:user}}
             </button>
-            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.en==3}" ng-model="user.lang.en" btn-radio="3">Advanced</button>
+            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.en==3}" ng-model="user.lang.en" btn-radio="3">{{__.advanced | i18n:user}}</button>
         </div>
     </div>
-    <div>Mandarin:
+    <div>{{__.langMn | i18n:user}}:
         <div class="btn-group">
-            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.mn==0}" ng-model="user.lang.mn" btn-radio="0">None</button>
-            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.mn==1}" ng-model="user.lang.mn" btn-radio="1">Beginner</button>
-            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.mn==2}" ng-model="user.lang.mn" btn-radio="2">Intermediate
+            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.mn==0}" ng-model="user.lang.mn" btn-radio="0">{{__.none | i18n:user}}</button>
+            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.mn==1}" ng-model="user.lang.mn" btn-radio="1">{{__.beginner | i18n:user}}</button>
+            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.mn==2}" ng-model="user.lang.mn" btn-radio="2">{{__.intermediate | i18n:user}}
             </button>
-            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.mn==3}" ng-model="user.lang.mn" btn-radio="3">Advanced</button>
+            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.mn==3}" ng-model="user.lang.mn" btn-radio="3">{{__.advanced | i18n:user}}</button>
         </div>
     </div>
-    <div>Tamil:
+    <div>{{__.langTm | i18n:user}}:
         <div class="btn-group">
-            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.tm==0}" ng-model="user.lang.tm" btn-radio="0">None</button>
-            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.tm==1}" ng-model="user.lang.tm" btn-radio="1">Beginner</button>
-            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.tm==2}" ng-model="user.lang.tm" btn-radio="2">Intermediate
+            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.tm==0}" ng-model="user.lang.tm" btn-radio="0">{{__.none | i18n:user}}</button>
+            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.tm==1}" ng-model="user.lang.tm" btn-radio="1">{{__.beginner | i18n:user}}</button>
+            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.tm==2}" ng-model="user.lang.tm" btn-radio="2">{{__.intermediate | i18n:user}}
             </button>
-            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.tm==3}" ng-model="user.lang.tm" btn-radio="3">Advanced</button>
+            <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.lang.tm==3}" ng-model="user.lang.tm" btn-radio="3">{{__.advanced | i18n:user}}</button>
         </div>
     </div>
 
-    <h5>Education:</h5>
-    STM:
+    <h4>{{__.education | i18n:user}}:</h4>
+    {{__.school | i18n:user}}:
     <button type="button" class="btn"  ng-class="{'btn-success': user.education.stm}" ng-model="user.education.stm" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false" >
-        {{user.education.stm | yesNo}}
+        {{user.education.stm | yesNo : __ | i18n : user}}
     </button><br>
-    Bachelor:
+    {{__.bachelor | i18n:user}}:
     <button type="button" class="btn" ng-class="{'btn-success': user.education.bachelor}" ng-model="user.education.bachelor" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false" >
-        {{user.education.bachelor | yesNo}}
+        {{user.education.bachelor | yesNo : __ | i18n : user}}
     </button>
+    <h4>Special options:</h4>
+    {{__.publishMyProfile | i18n:user}}:
+    <button type="button" class="btn" ng-class="{'btn-success': user.publish}" ng-model="user.publish" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false" >
+        {{user.publish | yesNo : __ | i18n : user}}
+    </button> <span ng-hide="user.publish" class="text-warning">{{__.nobodyWillFind | i18n:user}} {{defaults.domain}}!</span>
 
 
 

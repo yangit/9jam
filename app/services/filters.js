@@ -18,11 +18,21 @@ angular.module('9jam')
         }
     })
     .filter('yesNo', function () {
-        return function (condition) {
+        return function (condition, i18n) {
             if (condition) {
-                return "Yes";
+                return i18n.yes;
             } else {
-                return "No";
+                return i18n.no;
+            }
+        }
+    })
+    .filter('i18n', function () {
+//        var lang = this.$service('User').get().interfaceLang;
+        return function (hash,user) {
+            if (user.l) {
+                return hash.en;
+            } else {
+                return hash.my;
             }
         }
     });

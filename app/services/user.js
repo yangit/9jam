@@ -1,4 +1,5 @@
-user = {
+var user = {
+    publish:false,
     age: 29,
     lang: {en: 3, my: 1, tm: 0, mn: 0},
     phone:"0166521254",
@@ -11,7 +12,7 @@ user = {
     education: {stm: true, bachelor: true},
     location: "Kuala-Lumpur",
     rate: 90,
-    interfaceLang: true,
+    l: true,
     auth: {
         in:false,
         fb:{},

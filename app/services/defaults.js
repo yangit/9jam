@@ -1,4 +1,4 @@
-defaults = {
+var defaults = {
     domain: "9jam.my",
     locations: ['Kuala-Lumpur','Pinang']
 };
