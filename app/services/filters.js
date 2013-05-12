@@ -27,9 +27,9 @@ angular.module('9jam')
         }
     })
     .filter('i18n',function (User) {
-        var lang = User.get().interfaceLanguage;
+        var user = User.get();
         return function (hash) {
-            if (lang) {
+            if (user.interfaceLanguage) {
                 return hash.en;
             } else {
                 return hash.my;

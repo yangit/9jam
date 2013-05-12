@@ -34,7 +34,9 @@ var i10n = {
     login: {en: 'Login', my: 'Login'},
     logout: {en: 'Logout', my: 'Logout'},
     no: {en: 'No', my: 'Tidak'},
-    years: {en: 'yrs', my: 'thn'}
+    years: {en: 'yrs', my: 'thn'},
+    findWorker: {en: 'Find worker', my: 'Mencari pekerja'},
+    findJob: {en: 'Find job', my: 'Mencari pekerjaan'}
 };
 
 
