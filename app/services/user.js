@@ -12,7 +12,7 @@ var user = {
     education: {stm: true, bachelor: true},
     location: "Kuala-Lumpur",
     rate: 90,
-    l: true,
+    interfaceLanguage: true,
     auth: {
         in:false,
         fb:{},

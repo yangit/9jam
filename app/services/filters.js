@@ -26,13 +26,36 @@ angular.module('9jam')
             }
         }
     })
-    .filter('i18n', function () {
-//        var lang = this.$service('User').get().interfaceLang;
-        return function (hash,user) {
-            if (user.l) {
+    .filter('i18n',function (User) {
+        var lang = User.get().interfaceLanguage;
+        return function (hash) {
+            if (lang) {
                 return hash.en;
             } else {
                 return hash.my;
             }
+        }
+    }).filter('showLang', function () {
+        return function (value) {
+            var icon = "";
+            switch (value) {
+                case 0:
+                    break;
+                case 1:
+                    icon = "icon-star-empty";
+                    break;
+                case 2:
+                    icon = "icon-star-half-empty";
+                    break;
+                case 3:
+                    icon = "icon-star";
+                    break;
+            }
+            return icon;
+        }
+    }).filter('capitalize', function (Utils) {
+        var utils = Utils.get();
+        return function (string) {
+            return utils.capitalize(string);
         }
     });

@@ -9,6 +9,7 @@ var i10n = {
     hideLastName: {en: 'Hide last name', my: 'Menyembunyikan nama akhir'},
     pleseFillProfile: {en: 'Please fill in your profile. All information is public.', my: 'Sila isi dalam profil anda. Semua maklumat adalah awam.'},
     age: {en: 'Age', my: 'Umur'},
+    language: {en: 'Language', my: 'Bahasa'},
     location: {en: 'Location', my: 'Locasi'},
     yourRate: {en: 'Your rate', my: 'Kadar setiap jam'},
     langProf: {en: 'Language proficiency', my: 'Kemahiran bahasa'},
@@ -32,7 +33,8 @@ var i10n = {
     nobodyWillFind: {en: 'Nobody will find your profile on', my: 'Tiada siapa yang akan mencari anda di'},
     login: {en: 'Login', my: 'Login'},
     logout: {en: 'Logout', my: 'Logout'},
-    no: {en: 'No', my: 'Tidak'}
+    no: {en: 'No', my: 'Tidak'},
+    years: {en: 'yrs', my: 'thn'}
 };
 
 

@@ -7,7 +7,7 @@
 
         </ul>
         <ul class="nav pull-right">
-            <li class="pull-right"> <a href="" ng-click="user.l=!user.l"><i class="icon-globe"></i>En/My</a></li>
+            <li class="pull-right"> <a href="" ng-click="user.interfaceLanguage=!user.interfaceLanguage"><i class="icon-globe"></i>En/My</a></li>
             <li ng-hide="user.auth.in" class="pull-right"><input type="button" value="Login" class="btn btn-primary" ng-click="user.auth.in=true"></li>
             <li ng-show="user.auth.in" class="pull-right"><input type="button" value="Logout" class="btn btn-primary" ng-click="user.auth.in=false;$location.path('/')"></li>
         </ul>

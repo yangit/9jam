@@ -1,9 +1,8 @@
 <div class="container">
     <h2 ng-show="user.auth.in">{{__.hello | i18n:user}} {{user | username}}!</h2>
     <hr>
-    <ul>
-        <li ng-repeat="l in lancers">
-            <ng-include src="'app/views/lancer.html'" ng-controller="LancerCtrl"></ng-include>
-        </li>
-    </ul>
+    <div ng-repeat="u in users">
+        <ng-include src="'app/views/lancer.html'" ng-controller="LancerCtrl"></ng-include>
+    </div>
+
 </div>
