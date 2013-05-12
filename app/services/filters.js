@@ -67,10 +67,10 @@ angular.module('9jam')
                 if (filter.phone) {
                     result.push((l.phone.indexOf(filter.phone) >= 0));
                 }
-                if (filter.ageMin&&filter.ageMax) {
+                if (filter.ageMax) {
                     result.push((l.age>=filter.ageMin&&l.age<=filter.ageMax));
                 }
-                if (filter.rateMin&&filter.rateMax) {
+                if (filter.rateMax) {
                     result.push((l.rate>=filter.rateMin&&l.rate<=filter.rateMax));
                 }
                 if (filter.education) {
