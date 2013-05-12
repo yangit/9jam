@@ -50,7 +50,7 @@
 
             <h3>{{__.searchResults | i18n}} : {{(users | searchLancer:searchLancer).length}}</h3>
 
-            <div ng-repeat="u in users | searchLancer:searchLancer">
+            <div ng-repeat="u in users | searchLancer:searchLancer | orderBy:'lastSeen':true">
                 <ng-include src="'app/views/lancer.html'" ng-controller="LancerCtrl"></ng-include>
             </div>
 

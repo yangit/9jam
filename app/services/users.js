@@ -1506,7 +1506,7 @@ angular.module('9jam')
         };
 
         var users = [];
-        for (var i = 0; i < 50; i++) {
+        for (var i = 0; i < 500; i++) {
             var u = JSON.parse(JSON.stringify(defaults.user));
             names.first = (i % 2 == 0 ? names.boys : names.girls);
             u.name.first = names.rand(names.first);
@@ -1522,6 +1522,7 @@ angular.module('9jam')
             u.rate = Math.floor(Math.random() * (90 - 5 + 1)) + 5;
             u.phone = "0" + (Math.floor(Math.random() * 1000000000)).toString();
             u.age = Math.floor(Math.random() * (55 - 18 + 1)) + 18;
+            u.lastSeen = utils.randRange(1350000000000,+(new Date()));
 
 
             users.push(u);

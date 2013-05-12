@@ -88,7 +88,7 @@ angular.module('9jam')
                 return result.reduce(function (sum, item) {
                     return (sum == true && item == true)
                 }, true);
-            });
+            }).slice(0,100);
         }
     }).filter('education', function (i18n) {
         var __ = i18n.get();
@@ -109,5 +109,9 @@ angular.module('9jam')
                     break;
             }
             return e;
+        }
+    }).filter('ago', function () {
+        return function (date) {
+            return moment(date).fromNow();
         }
     });

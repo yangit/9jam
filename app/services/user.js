@@ -13,6 +13,13 @@ var user = {
     location: "Kuala-Lumpur",
     rate: 90,
     interfaceLanguage: true,
+    skills: {
+        heavy:false,
+        promo:true,
+        translation:true,
+        design:true,
+        coding:true
+    },
     auth: {
         in:false,
         fb:{},
