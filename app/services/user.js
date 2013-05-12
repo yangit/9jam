@@ -9,7 +9,7 @@ var user = {
         last: "Tyukhtyaev",
         shy: true
     },
-    education: {stm: true, bachelor: true},
+    education: 3,
     location: "Kuala-Lumpur",
     rate: 90,
     interfaceLanguage: true,

@@ -1,14 +1,62 @@
 <div class="container">
     <h2 ng-show="user.auth.in">{{__.hello | i18n}} {{user | username}}!</h2>
-    Find by phne <input type="text">
+
     <tabs>
         <pane heading="{{__.findWorker | i18n}}">
-            <div ng-repeat="u in users">
+            <div class="row">
+                <div class="span2">
+                    <label>
+                        <i class="icon-mobile-phone icon-large"></i> {{__.mobilePhone | i18n}}:</label> <input
+                        class="span2" type="text"
+                        ng-model="searchLancer.phone">
+
+                    <label><i class="icon-home icon-large"></i> {{__.location | i18n}}:</label>
+                    <select ng-model="searchLancer.location" class="span2">
+                        <option value=""></option>
+                        <option ng-repeat="loc in defaults.locations">{{loc}}</option>
+                    </select>
+
+                </div>
+                <div class="span3">
+                    <label><i class="icon-smile icon-large"></i> {{__.age | i18n}}:</label>
+                    <input class="span1" type="number" step="0.1" ng-model="searchLancer.ageMin"
+
+                           tooltip="{{__.from | i18n }}" tooltip-trigger="focus">
+                    <input class="span1" type="number" step="0.1" ng-model="searchLancer.ageMax"
+
+                           tooltip="{{__.to | i18n }}" tooltip-trigger="focus">
+
+                    <label><i class="icon-money icon-large" style="color:#008000;"></i> {{__.rate | i18n}} RM/{{__.hour
+                        | i18n}}:</label>
+                    <input class="span1" type="number" step="0.1" ng-model="searchLancer.rateMin"
+
+                           tooltip="{{__.from | i18n }}" tooltip-trigger="focus">
+                    <input class="span1" type="number" step="0.1" ng-model="searchLancer.rateMax"
+
+                           tooltip="{{__.to | i18n }}" tooltip-trigger="focus">
+                </div>
+                <div class="span2">
+                    <label><i class="icon-book icon-large" style="color: blue"></i> {{__.education | i18n}}:</label>
+                    <select  ng-model="searchLancer.education" class="span2">
+                        <option value="0" >{{__.none | i18n}}</option>
+                        <option value="1">{{__.school | i18n}}</option>
+                        <option value="2">{{__.bachelor | i18n}}</option>
+                        <option value="3">{{__.masters | i18n}}</option>
+                    </select>
+                    <label class="checkbox" tooltip-placement="bottom" tooltip="{{__.strictExplain | i18n}}"> {{__.strict | i18n}}
+                        <input type="checkbox" ng-model="searchLancer.educationStrict"></label>
+                </div>
+            </div>
+
+            <h3>{{__.searchResults | i18n}} : {{(users | searchLancer:searchLancer).length}}</h3>
+
+            <div ng-repeat="u in users | searchLancer:searchLancer">
                 <ng-include src="'app/views/lancer.html'" ng-controller="LancerCtrl"></ng-include>
             </div>
+
         </pane>
         <pane heading="{{__.findJob | i18n}}">To be implemented</pane>
-        </tabs>
+    </tabs>
 
 
 </div>

@@ -1,25 +1,34 @@
 var defaults = {
+    searchLancer: {
+        education: 0,
+        educationStrict: true,
+        ageMax:100,
+        ageMin:0,
+        rateMax:100,
+        rateMin:0
+    },
     domain: "9jam.my",
-    locations: ['Kuala-Lumpur','Pinang'],
+    locations: ['Kuala-Lumpur', 'Pinang'],
     user: {
-        publish:false,
+        lastSeen: null,
+        publish: false,
         age: 0,
         lang: {en: 0, my: 0, tm: 0, mn: 0},
-        phone:"",
+        phone: "",
         name: {
             first: "",
             middle: "",
             last: "",
             shy: false
         },
-        education: {stm: false, bachelor: false},
+        education: 0,
         location: "",
         rate: 0,
         interfaceLanguage: false,
         auth: {
-            in:false,
-            fb:{},
-            local:{}
+            in: false,
+            fb: {},
+            local: {}
         }
     }
 };

@@ -15,7 +15,7 @@
     </label>
     <label>{{__.age | i18n}}:
         <input class="input-mini" type="number" ng-model="user.age" step="1"></label>
-    <label>{{__.yourRate | i18n}}:
+    <label>{{__.rate | i18n}}:
     <div class="input-prepend input-append">
         <span class="add-on">RM</span>
         <input class="input-mini" type="number" ng-model="user.rate" value="0" step="0.1">
@@ -67,13 +67,13 @@
 
     <h4>{{__.education | i18n}}:</h4>
     {{__.school | i18n}}:
-    <button type="button" class="btn"  ng-class="{'btn-success': user.education.stm}" ng-model="user.education.stm" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false" >
-        {{user.education.stm | yesNo : __ | i18n}}
-    </button><br>
-    {{__.bachelor | i18n}}:
-    <button type="button" class="btn" ng-class="{'btn-success': user.education.bachelor}" ng-model="user.education.bachelor" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false" >
-        {{user.education.bachelor | yesNo : __ | i18n}}
-    </button>
+    <div class="btn-group">
+        <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.education==0}" ng-model="user.education" btn-radio="0">{{__.none | i18n}}</button>
+        <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.education==1}" ng-model="user.education" btn-radio="1">{{__.school | i18n}}</button>
+        <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.education==2}" ng-model="user.education" btn-radio="2">{{__.bachelor | i18n}}
+        </button>
+        <button type="button" class="btn btn-mini" ng-class="{'btn-success': user.education==3}" ng-model="user.education" btn-radio="3">{{__.masters | i18n}}</button>
+    </div>
     <h4>Special options:</h4>
     {{__.publishMyProfile | i18n}}:
     <button type="button" class="btn" ng-class="{'btn-success': user.publish}" ng-model="user.publish" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false" >

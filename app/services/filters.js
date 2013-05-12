@@ -35,7 +35,8 @@ angular.module('9jam')
                 return hash.my;
             }
         }
-    }).filter('showLang', function () {
+    })
+    .filter('showLang',function () {
         return function (value) {
             var icon = "";
             switch (value) {
@@ -53,9 +54,60 @@ angular.module('9jam')
             }
             return icon;
         }
-    }).filter('capitalize', function (Utils) {
+    })
+    .filter('capitalize',function (Utils) {
         var utils = Utils.get();
         return function (string) {
             return utils.capitalize(string);
+        }
+    }).filter('searchLancer', function () {
+        return function (lancers, filter) {
+            return lancers.filter(function (l) {
+                var result = [];
+                if (filter.phone) {
+                    result.push((l.phone.indexOf(filter.phone) >= 0));
+                }
+                if (filter.ageMin&&filter.ageMax) {
+                    result.push((l.age>=filter.ageMin&&l.age<=filter.ageMax));
+                }
+                if (filter.rateMin&&filter.rateMax) {
+                    result.push((l.rate>=filter.rateMin&&l.rate<=filter.rateMax));
+                }
+                if (filter.education) {
+                    if (filter.educationStrict) {
+                        result.push((l.education == filter.education));
+                    } else {
+                        result.push((l.education >= filter.education));
+                    }
+                }
+                if (filter.location) {
+                    result.push((l.location===filter.location));
+                }
+
+                //check if all result's checks resolve to true
+                return result.reduce(function (sum, item) {
+                    return (sum == true && item == true)
+                }, true);
+            });
+        }
+    }).filter('education', function (i18n) {
+        var __ = i18n.get();
+        return function (education) {
+            var e = "";
+            switch (education) {
+                case 0:
+                    e=__.none;
+                    break;
+                case 1:
+                    e=__.school;
+                    break;
+                case 2:
+                    e=__.bachelor;
+                    break;
+                case 3:
+                    e=__.masters;
+                    break;
+            }
+            return e;
         }
     });

@@ -1,22 +1,24 @@
-<div ng-click="expand=!expand">{{u | username }}
-    <div ng-show="expand" class="row">
-        <div class="span2">
-            <i class="icon-globe icon-large" style="color:#6495ed"></i> {{__.language | i18n}}
-            <div ng-repeat="(code,value) in u.lang" ng-show="value">{{code | capitalize}} : <i
-                    class='{{value | showLang}}'></i>
-            </div>
-        </div>
-        <div class="span2">
-            <div><i class="icon-mobile-phone icon-large"></i> :{{u.phone}}</div>
-            <div><i class="icon-home icon-large"></i> : {{u.location}}</div>
-            <div><i class="icon-meh icon-large"></i> : {{u.age}}{{__.years | i18n}}</div>
-            <div><i class="icon-money icon-large" style="color:#008000;"></i> : {{u.rate}}/{{__.hour | i18n}}</div>
-            {{__.education | i18n }} :
-            <span ng-show="u.education.stm" tooltip="{{__.school | i18n}}"><i class="icon-book icon-large"
-                                                                              style="color: blue"></i></span>
-    <span ng-show="u.education.bachelor" tooltip="{{__.bachelor | i18n}}"><i class="icon-bookmark icon-large"
-                                                                             style="color: red"></i></span>
-        </div>
+<div><strong>{{u | username }}</strong></div>
+<div class="row">
+    <div class="span2  offset1">
+        <div><i class="icon-mobile-phone icon-large"></i> :{{u.phone}}</div>
+        <div><i class="icon-home icon-large"></i> : {{u.location}}</div>
+        <div><i class="icon-smile icon-large"></i> : {{u.age}}{{__.years | i18n}}</div>
+
 
     </div>
+    <div class="span2">
+        <div><i class="icon-money icon-large" style="color:#008000;"></i> : {{u.rate}}/{{__.hour | i18n}}</div>
+        <div><i class="icon-book icon-large" style="color: blue"></i> : {{u.education | education | i18n}}</div>
+    </div>
+    <div class="span1">
+        <i class="icon-globe icon-large" style="color:#6495ed"></i> {{__.language | i18n}}
+    </div>
+
+    <div class="span1">
+        <div ng-repeat="(code,value) in u.lang" ng-show="value">{{code | capitalize}} : <i
+                class='{{value | showLang}}'></i>
+        </div>
+    </div>
+
 </div>

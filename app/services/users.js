@@ -1517,8 +1517,7 @@ angular.module('9jam')
             u.lang.my = names.rand([0, 1, 2, 3]);
             u.lang.mn = names.rand([0, 1, 2, 3]);
             u.lang.tm = names.rand([0, 1, 2, 3]);
-            u.education.stm = names.rand([true, false]);
-            u.education.bachelor = names.rand([true, false]);
+            u.education = names.rand([0, 1, 2, 3]);
             u.location = names.rand(defaults.locations);
             u.rate = Math.floor(Math.random() * (90 - 5 + 1)) + 5;
             u.phone = "0" + (Math.floor(Math.random() * 1000000000)).toString();
