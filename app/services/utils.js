@@ -1,4 +1,3 @@
-
 angular.module('9jam')
     .factory('Utils', function () {
         var utils = {
@@ -8,9 +7,6 @@ angular.module('9jam')
             randRange:function (min,max) {return Math.floor(Math.random() * (max - min + 1)) + min;}
 
         };
-
-        // Service logic
-        // ...
 
         // Public API here
         return {
