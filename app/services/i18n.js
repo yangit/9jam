@@ -1,5 +1,6 @@
 angular.module('9jam')
     .factory('i18n', function () {
+        //simple hash of translations.
         var i18n = {
             from: {en: 'From', my: 'Daripada'},
             to: {en: 'To', my: 'Kepada'},

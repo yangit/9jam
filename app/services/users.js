@@ -1,3 +1,5 @@
+//This file mocks user database.
+//Take a few arrays, shuffle them around. Push results to angular.
 angular.module('9jam')
     .factory('Users', function (Defaults,Utils) {
         var defaults = Defaults.get();
@@ -1501,24 +1503,21 @@ angular.module('9jam')
             'WILKERSON',
             'NASH',
             'SUMMERS']
-        names.rand = function (array) {
-            return array[Math.floor(Math.random() * array.length)];
-        };
 
         var users = [];
         for (var i = 0; i < 500; i++) {
             var u = JSON.parse(JSON.stringify(defaults.user));
             names.first = (i % 2 == 0 ? names.boys : names.girls);
-            u.name.first = names.rand(names.first);
-            u.name.middle = names.rand(names.first);
-            u.name.last = utils.capitalize(names.rand(names.last).toLowerCase());
-            u.name.shy = names.rand([true, false]);
-            u.lang.en = names.rand([0, 1, 2, 3]);
-            u.lang.my = names.rand([0, 1, 2, 3]);
-            u.lang.mn = names.rand([0, 1, 2, 3]);
-            u.lang.tm = names.rand([0, 1, 2, 3]);
-            u.education = names.rand([0, 1, 2, 3]);
-            u.location = names.rand(defaults.locations);
+            u.name.first = utils.rand(names.first);
+            u.name.middle = utils.rand(names.first);
+            u.name.last = utils.capitalize(utils.rand(names.last).toLowerCase());
+            u.name.shy = utils.rand([true, false]);
+            u.lang.en = utils.rand([0, 1, 2, 3]);
+            u.lang.my = utils.rand([0, 1, 2, 3]);
+            u.lang.mn = utils.rand([0, 1, 2, 3]);
+            u.lang.tm = utils.rand([0, 1, 2, 3]);
+            u.education = utils.rand([0, 1, 2, 3]);
+            u.location = utils.rand(defaults.locations);
             u.rate = Math.floor(Math.random() * (90 - 5 + 1)) + 5;
             u.phone = "0" + (Math.floor(Math.random() * 1000000000)).toString();
             u.age = Math.floor(Math.random() * (55 - 18 + 1)) + 18;

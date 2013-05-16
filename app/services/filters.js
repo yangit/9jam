@@ -1,9 +1,9 @@
 angular.module('9jam')
-    .filter('username', function () {
+    .filter('username', function (Utils) {
+        //show username from user object. Takes into consideration "shy" option and capitalizes names.
+        var utils = Utils.get();
         return function (user) {
-            var capitalise = function (string) {
-                return string.charAt(0).toUpperCase() + string.slice(1);
-            };
+            //hack to quickly get properties values, not object reference.
             var out = JSON.parse(JSON.stringify(user.name));
             if (out.shy) {
                 if (out.middle.length) {
@@ -13,11 +13,11 @@ angular.module('9jam')
                     out.last = out.last.charAt(0) + '.';
                 }
             }
-
-            return capitalise(out.first) + " " + capitalise(out.middle) + " " + capitalise(out.last);
+            return utils.capitalize(out.first) + " " + utils.capitalize(out.middle) + " " + utils.capitalize(out.last);
         }
     })
     .filter('yesNo', function () {
+        //takes boolean input and produces localised Yes\No text. Useful for buttons.
         return function (condition, i18n) {
             if (condition) {
                 return i18n.yes;
@@ -27,6 +27,7 @@ angular.module('9jam')
         }
     })
     .filter('i18n',function (User) {
+        //returns hash according to user language settings. There are only 2 languages planned for this website so boolean is fine.
         var user = User.get();
         return function (hash) {
             if (user.interfaceLanguage) {
@@ -37,6 +38,7 @@ angular.module('9jam')
         }
     })
     .filter('showLang',function () {
+        //filter to show "star" icon based on how skilled user is. The more skilled he is the more filled-up icon we use.
         return function (value) {
             var icon = "";
             switch (value) {
@@ -56,11 +58,14 @@ angular.module('9jam')
         }
     })
     .filter('capitalize',function (Utils) {
+        //capitalize words.
         var utils = Utils.get();
         return function (string) {
             return utils.capitalize(string);
         }
     }).filter('searchLancer', function () {
+        //search for free[lancer]. Apply series of checks and only proceed if all of them resolve to true.
+        //having an array of check results helps with debug.
         return function (lancers, filter) {
             return lancers.filter(function (l) {
                 var result = [];
@@ -88,9 +93,10 @@ angular.module('9jam')
                 return result.reduce(function (sum, item) {
                     return (sum == true && item == true)
                 }, true);
-            }).slice(0,100);
+            }).slice(0,100); // return only first 100 results. Should be sorted before slicing though. Anyhow this piece will be rewritten on server with mongo.
         }
     }).filter('education', function (i18n) {
+        // transpose education level from Int to localised word.
         var __ = i18n.get();
         return function (education) {
             var e = "";
@@ -111,6 +117,7 @@ angular.module('9jam')
             return e;
         }
     }).filter('ago', function () {
+        //apply "five minutes ago" filter to date objects.
         return function (date) {
             return moment(date).fromNow();
         }

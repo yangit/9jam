@@ -1,3 +1,5 @@
+//declare default (new) user object and some other defaults in the future.
+
 angular.module('9jam')
     .factory('Defaults', function () {
         var defaults = {
